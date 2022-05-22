@@ -27,7 +27,7 @@ def home():
 
 
 @app.route("/get", methods=["POST"])
-def chatbot_response():
+def chatbot_response(msg):
     ints = predict_class(msg, model)
     res = getResponse(ints, intents)
     return res
@@ -80,5 +80,5 @@ def getResponse(ints, intents_json):
     return result
 
 
-#if __name__ == "__app__":
-    #app.run()
+if __name__ == "__app__":
+    app.run()
